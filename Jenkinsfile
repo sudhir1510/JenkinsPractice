@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                bat 'mkdir -p output'
+                bat 'mkdir output'
             }
         }
     }
