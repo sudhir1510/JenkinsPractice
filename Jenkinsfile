@@ -5,7 +5,7 @@ pipeline{
 		stage('Create build output'){
 			
 			steps{
-				echo 'creating directory...!'
+				//echo 'creating directory...!'
 				bat 'mkdir -p output'
 			}
 		}
