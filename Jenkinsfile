@@ -3,9 +3,13 @@ pipeline{
 	
 	stages{
 		stage('Create build output'){
-			echo 'creating directory...!'
-			bat 'mkdir -p output'
+			
+			steps{
+				echo 'creating directory...!'
+				bat 'mkdir -p output'
+			}
 		}
 	}
 
 }
+
