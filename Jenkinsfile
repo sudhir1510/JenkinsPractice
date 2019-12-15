@@ -1,15 +1,10 @@
-pipeline{
-	agent any
-	
-	stages{
-		stage('Create build output'){
-			
-			steps{
-				//echo 'creating directory...!'
-				bat 'mkdir -p output'
-			}
-		}
-	}
-
+pipeline {
+    agent any
+    stages {
+        stage('Build') {
+            steps {
+                bat 'mkdir -p output'
+            }
+        }
+    }
 }
-
