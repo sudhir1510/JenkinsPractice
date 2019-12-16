@@ -5,7 +5,7 @@ pipeline {
             steps {
                 bat 'cd d:'
                 echo "on d drive"
-                bat 'new.bat'
+                bat 'D:\new.bat'
                 
             }
         }
