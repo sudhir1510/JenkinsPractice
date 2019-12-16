@@ -3,7 +3,8 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                bat 'mvn --version'
+                bat 'cd d:'
+                echo "on d drive"
             }
         }
     }
