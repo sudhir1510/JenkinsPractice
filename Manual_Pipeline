@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                echo params.application-name
+                echo params.application_name
                 
             }
         }
