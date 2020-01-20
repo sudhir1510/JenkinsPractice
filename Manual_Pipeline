@@ -11,9 +11,11 @@ pipeline {
 			}	
 		}
 		
-		stage('Build') {
+		stage('read Prop') {
 			steps {
-				echo 'hi sudh'
+				readProp = readProperties file:'info.properties'
+				
+				echo """"my pro[p names are  : ${readProp['name']} """"
 			}
 			
         }
