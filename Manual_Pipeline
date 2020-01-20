@@ -1,4 +1,4 @@
-def readProp;
+def readProp = m1();
 
 
 properties([
