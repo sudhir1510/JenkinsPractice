@@ -1,7 +1,7 @@
 def readProp;
 
 pipeline {
-    agent none
+    agent any
 	
 	stages {
         
