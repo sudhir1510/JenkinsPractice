@@ -15,10 +15,9 @@ node{
                 $class: 'ChoiceParameterDefinition',
                 name: 'ami',
                 choices: m1(),
-                description: 'AMI',
-            ],
+                description: 'AMI'
+            ]
         ]
-    )
 
     //echo ("Selected AMI :: "+userInput)
 }
