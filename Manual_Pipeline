@@ -6,8 +6,11 @@ pipeline {
 	stages {
         
 		stage ('prepare') {
-			checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[url: 'https://github.com/sudhir1510/JenkinsPractice.git']]])
+			steps {
+				checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[url: 'https://github.com/sudhir1510/JenkinsPractice.git']]])
+			}	
 		}
+		
 		stage('Build') {
 			steps {
 				echo 'hi sudh'
