@@ -3,7 +3,7 @@ def readProp;
 
 properties([
    parameters([
-      choice(choices: 'abc \n def ', description: 'Please select an environment', name: 'Env')
+      choice(choices: ${readProp['name']} , description: 'Please select an environment', name: 'Env')
    ])
 ])
 
