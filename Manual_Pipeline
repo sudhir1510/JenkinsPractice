@@ -15,7 +15,7 @@ pipeline {
 			steps {
 				readProp = readProperties file:'info.properties'
 				
-				echo """"my pro[p names are  : ${readProp['name']} """"
+				echo """my pro[p names are  : ${readProp['name']}"""
 			}
 			
         }
