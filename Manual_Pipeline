@@ -20,7 +20,7 @@ pipeline {
 				}
 			def props = readProperties file: 'info.properties'
 			
-			echo ${props['name']}
+			echo """hi : ${props['name']} """
 			}	
         	}
     	}
