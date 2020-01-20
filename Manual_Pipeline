@@ -1,15 +1,15 @@
 def readProp;
 
 
-
-pipeline {
-    agent any
-
 properties([
    parameters([
       choice(choices: 'abc \n def ', description: 'Please select an environment', name: 'Env')
    ])
 ])
+
+pipeline {
+    agent any
+
 	stages {
         
 		stage ('prepare') {
