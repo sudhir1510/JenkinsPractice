@@ -14,6 +14,7 @@ pipeline {
 		
 		stage('read Prop') {
 			steps {
+				script{
 			if (!fileExists('info.properties')){
 				    echo 'No build properties.'
 				    exit 
@@ -21,6 +22,7 @@ pipeline {
 			def props = readProperties file: 'info.properties'
 			
 			sh "echo $props['name']"
+			}
 			}	
         	}
     	}
