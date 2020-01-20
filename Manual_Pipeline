@@ -8,9 +8,20 @@ def m1(){
 	
 }
 
-readProp = m1()
+node{
+    
+       parameters: [
+            [
+                $class: 'ChoiceParameterDefinition',
+                name: 'ami',
+                choices: m1(),
+                description: 'AMI',
+            ],
+        ]
+    )
 
-
+    //echo ("Selected AMI :: "+userInput)
+}
 
 properties([
    parameters([
