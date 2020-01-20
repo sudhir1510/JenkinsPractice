@@ -14,7 +14,9 @@ pipeline {
 		
 		stage('read Prop') {
 			steps{
+			script{
 			 	readProp = readProperties file: 'info.properties'
+				}
 			
 				echo """my  :  ${readProp['name']}"""
 			}
