@@ -22,7 +22,7 @@ pipeline {
 		stage('read Prop') {
 			steps{
 				script{
-				readProp()
+				m1()
 				echo 'byeeeeeeeeee'
 				}
 			}
@@ -32,7 +32,7 @@ pipeline {
 }
 
 
-def readProp(){
+def m1(){
 	
 			 	 
 		readProp = readProperties  file: 'info.properties'		
