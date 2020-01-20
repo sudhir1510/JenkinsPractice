@@ -1,9 +1,20 @@
 def readProp;
 
+def m1(){
+	
+			 	 
+		readProp = readProperties  file: 'info.properties'		
+		echo """my  :  ${readProp['name']}"""
+	
+}
+
+readProp = m1()
+
+
 
 properties([
    parameters([
-      choice(choices:readProp123(), description: 'Please select an environment', name: 'Env')
+      choice(choices:readProp, description: 'Please select an environment', name: 'Env')
    ])
 ])
 
@@ -33,13 +44,7 @@ pipeline {
 }
 
 
-def m1(){
-	
-			 	 
-		readProp = readProperties  file: 'info.properties'		
-		echo """my  :  ${readProp['name']}"""
-	
-}
+
 
 def readProp123(){
 	return 'abcd \n efgh \n ijk'	
