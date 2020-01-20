@@ -14,11 +14,13 @@ pipeline {
 		
 		stage('read Prop') {
 			steps {
-			echo 'start'
+			if (!fileExists('info.properties')){
+				    echo 'No build properties.'
+				    exit 
+				}
+			def props = readProperties file: 'info.properties'
 			
-				readProp = readFile file: 'info.properties';	
-				echo """my prop names are  : ${readProp['name']}"""
-				
+			echo ${props['name']}
 			}	
         	}
     	}
