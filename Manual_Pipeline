@@ -3,7 +3,7 @@ def readProp;
 
 properties([
    parameters([
-      choice(choices:readProp, description: 'Please select an environment', name: 'Env')
+      choice(choices:readProp123(), description: 'Please select an environment', name: 'Env')
    ])
 ])
 
@@ -22,7 +22,7 @@ pipeline {
 		stage('read Prop') {
 			steps{
 				script{
-			 	 readProp = readProperties  file: 'info.properties'
+			 	 
 			
 				echo """my  :  ${readProp['name']}"""
 				}
@@ -30,4 +30,8 @@ pipeline {
 		}	
         }
   
+}
+
+def readProp123(){
+	readProp = readProperties  file: 'info.properties'
 }
