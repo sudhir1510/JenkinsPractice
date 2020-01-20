@@ -21,11 +21,8 @@ pipeline {
 		
 		stage('read Prop') {
 			steps{
-				script{
-			 	 
-				readProp = readProperties  file: 'info.properties'		
-				echo """my  :  ${readProp['name']}"""
-				}
+				readProp()
+				echo 'byeeeeeeeeee'
 			}
 		}	
         }
@@ -33,7 +30,13 @@ pipeline {
 }
 
 
-
+def readProp(){
+	script{
+			 	 
+		readProp = readProperties  file: 'info.properties'		
+		echo """my  :  ${readProp['name']}"""
+	}
+}
 
 def readProp123(){
 	return 'abcd \n efgh \n ijk'	
