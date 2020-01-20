@@ -1,8 +1,11 @@
-
+def readProp;
+def nodes;
 
 node {
-    dir('/home/pencillr/workspace') {
-        nodes = sh (script: 'sh list_nodes.sh', returnStdout: true).trim()
+    dir('info.properties') {
+        //nodes = sh (script: 'sh list_nodes.sh', returnStdout: true).trim()
+		readProp = readProperties  file: 'info.properties'		
+		echo """my  :  ${readProp['name']}"""
     }
 }
 
