@@ -22,7 +22,7 @@ pipeline {
 		stage('read Prop') {
 			steps{
 				script{
-				m1()
+				//m1()
 				 parameters: [choice(name: 'RELEASE_SCOPE', choices: 'hi \n bye ', description: 'What is the release scope?')]
 				echo 'byeeeeeeeeee'
 				}
