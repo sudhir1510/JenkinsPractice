@@ -16,7 +16,7 @@ pipeline {
 			steps {
 			echo 'start'
 				script{
-				readProp = readProperties file: 'info.properties';	
+				readProp = readFile file: 'info.properties';	
 				echo """my prop names are  : ${readProp['name']}"""
 				}
 			}	
