@@ -3,7 +3,7 @@ properties = null
 @NonCPS
 def loadProperties() {
 	checkout scm
-	File propertiesFile = new File('${workspace}/pipeline.properties')
+	File propertiesFile = new File('info.properties')
 	propertiesFile.withInputStream {
 			properties.load(propertiesFile)
 	}
@@ -19,7 +19,7 @@ pipeline {
 			steps {
 				script {
 				loadProperties()
-				echo "${properties['repo']}"
+				echo "${properties['name']}"
 				}
 			}
 		}
@@ -28,7 +28,7 @@ pipeline {
 			agent any
 			
 			steps {
-				sh 'echo ${properties.repo}'
+				sh 'echo ${properties.name}'
 			}
 			
         }
