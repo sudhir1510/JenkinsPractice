@@ -33,7 +33,9 @@ agent any
                     }
                         versions = input message: 'Choose testload version!', ok: 'SET', parameters: [choice(name: 'TESTLOAD_VERSION', choices: "${version_collection}", description: '')]
 
-
+			}
+			}
+			}
         stage("build") {
             steps {
                 script {
@@ -44,3 +46,9 @@ agent any
                         ])
                 }
             }
+			}
+			
+			
+		}	
+		
+		}
