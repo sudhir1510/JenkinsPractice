@@ -1,34 +1,16 @@
-properties = null
+def readProp;
 
-@NonCPS
-def loadProperties() {
-	checkout scm
-	File propertiesFile = new File('info.properties')
-	propertiesFile.withInputStream {
-			properties.load(propertiesFile)
-	}
-}
 pipeline {
     agent none
 	
 	stages {
         
 		stage ('prepare') {
-			agent any
-			
-			steps {
-				script {
-				loadProperties()
-				echo "${properties['name']}"
-				}
-			}
+			checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[url: 'https://github.com/sudhir1510/JenkinsPractice.git']]])
 		}
 		stage('Build') {
-            
-			agent any
-			
 			steps {
-				sh 'echo ${properties.name}'
+				echo 'hi sudh'
 			}
 			
         }
