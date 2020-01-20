@@ -1,4 +1,4 @@
-def readProp = m1();
+def readProp;
 
 
 properties([
@@ -23,6 +23,7 @@ pipeline {
 			steps{
 				script{
 				m1()
+				 parameters: [choice(name: 'RELEASE_SCOPE', choices: 'hi \n bye ', description: 'What is the release scope?')]
 				echo 'byeeeeeeeeee'
 				}
 			}
