@@ -1,8 +1,17 @@
 def readProp;
 
+
+
 pipeline {
     agent any
-	
+
+def envs = loadEnvs();
+
+properties([
+   parameters([
+      choice(choices: 'abc \n def ', description: 'Please select an environment', name: 'Env')
+   ])
+])
 	stages {
         
 		stage ('prepare') {
