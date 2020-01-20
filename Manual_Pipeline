@@ -15,10 +15,10 @@ pipeline {
 		stage('read Prop') {
 			steps{
 			script{
-			 	readProp = readProperties file: 'info.properties'
+			 	def props = readProperties  file: 'info.properties'
 				}
 			
-				echo """my  :  ${readProp['name']}"""
+				echo """my  :  ${props['name']}"""
 			}
 		}	
         }
