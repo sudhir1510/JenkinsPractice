@@ -10,6 +10,13 @@ properties([
    ])
 ])
 
+node{
+	readProp = readProperties  file: 'info.properties'		
+	echo """my  :  ${readProp['name']}"""	
+	return readProp;	
+}
+
+
 pipeline {
     agent any
 
