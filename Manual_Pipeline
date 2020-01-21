@@ -1,11 +1,11 @@
-
-pipeline {
-    agent any
-	properties([
+properties([
 	   parameters([
 	      choice(choices:res, description: 'Please select an environment', name: 'Env')
 	   ])
 	])
+pipeline {
+    agent any
+	
 	
 	stages {
         
