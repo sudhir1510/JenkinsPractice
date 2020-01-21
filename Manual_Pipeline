@@ -10,7 +10,7 @@ properties([
    ])
 ])
 
-node{
+environment {
 	readProp = readProperties  file: 'info.properties'		
 	echo """my  :  ${readProp['name']}"""	
 	return readProp;	
