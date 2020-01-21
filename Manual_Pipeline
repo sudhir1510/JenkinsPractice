@@ -24,8 +24,10 @@ pipeline {
 		
 		stage('read Prop') {
 			steps{
-			res = m1();
-				echo 'hiiiiiiiiiiiiiiiii'
+				script{
+					res = m1();
+					echo 'hiiiiiiiiiiiiiiiii'
+				}
 			}
 		}	
         }
