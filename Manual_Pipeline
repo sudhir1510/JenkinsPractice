@@ -1,25 +1,12 @@
-def readProp;
-
-def res = m1();
-
-
-
-properties([
-   parameters([
-      choice(choices:res, description: 'Please select an environment', name: 'Env')
-   ])
-])
-
-environment {
-	readProp = readProperties  file: 'info.properties'		
-	echo """my  :  ${readProp['name']}"""	
-	return readProp;	
-}
-
 
 pipeline {
     agent any
-
+	properties([
+	   parameters([
+	      choice(choices:res, description: 'Please select an environment', name: 'Env')
+	   ])
+	])
+	
 	stages {
         
 		stage ('prepare') {
@@ -32,7 +19,7 @@ pipeline {
 		stage('read Prop') {
 			steps{
 				script{
-					res = m1();
+					
 					echo 'hiiiiiiiiiiiiiiiii'
 				}
 			}
