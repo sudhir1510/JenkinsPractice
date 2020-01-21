@@ -1,28 +1,8 @@
 def readProp;
 
-def m1(){
-	
-			 	 
-		readProp = readProperties  file: 'info.properties'		
-		echo """my  :  ${readProp['name']}"""
-		
-		return readProp;
-	
-}
+def res;
 
-node{
-    
-       parameters: [
-            [
-                $class: 'ChoiceParameterDefinition',
-                name: 'ami',
-                choices: m1(),
-                description: 'AMI'
-            ]
-        ]
 
-    //echo ("Selected AMI :: "+userInput)
-}
 
 properties([
    parameters([
@@ -44,6 +24,7 @@ pipeline {
 		
 		stage('read Prop') {
 			steps{
+			res = m1();
 				echo 'hiiiiiiiiiiiiiiiii'
 			}
 		}	
@@ -51,7 +32,11 @@ pipeline {
   
 }
 
-
+def m1(){			 	 
+	readProp = readProperties  file: 'info.properties'		
+	echo """my  :  ${readProp['name']}"""	
+	return readProp;	
+}
 
 
 def readProp123(){
