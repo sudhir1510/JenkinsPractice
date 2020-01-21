@@ -5,6 +5,8 @@ def m1(){
 			 	 
 		readProp = readProperties  file: 'info.properties'		
 		echo """my  :  ${readProp['name']}"""
+		
+		return readProp;
 	
 }
 
