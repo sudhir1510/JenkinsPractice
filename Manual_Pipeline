@@ -1,6 +1,6 @@
 properties([
 	   parameters([
-	      choice(choices:res, description: 'Please select an environment', name: 'Env')
+	      choice(choices:readProp123(), description: 'Please select an environment', name: 'Env')
 	   ])
 	])
 pipeline {
