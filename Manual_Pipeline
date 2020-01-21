@@ -6,7 +6,7 @@ def res;
 
 properties([
    parameters([
-      choice(choices:readProp, description: 'Please select an environment', name: 'Env')
+      choice(choices:res, description: 'Please select an environment', name: 'Env')
    ])
 ])
 
