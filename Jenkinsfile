@@ -1,6 +1,7 @@
 pipeline {
     agent any
-    
+   
+    node{
     withCredentials([
       [$class: 'UsernamePasswordMultiBinding', credentialsId: curl_pass, usernameVariable: 'Username', passwordVariable: 'Password'],
   ]){
@@ -20,6 +21,6 @@ pipeline {
           )"""
         }
     }                                                                                                                                                  
-        
+    }
     }
 }
