@@ -1,10 +1,9 @@
 pipeline {
+         withCredentials([
+      [$class: 'UsernamePasswordMultiBinding', credentialsId: curl_pass, usernameVariable: 'Username', passwordVariable: 'Password'],
+    ]){
     agent any
    
-    node{
-    withCredentials([
-      [$class: 'UsernamePasswordMultiBinding', credentialsId: curl_pass, usernameVariable: 'Username', passwordVariable: 'Password'],
-  ]){
     stages {
         stage('Build') {
             steps {
