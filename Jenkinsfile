@@ -1,16 +1,25 @@
 pipeline {
     agent any
+    
+    withCredentials([
+      [$class: 'UsernamePasswordMultiBinding', credentialsId: curl_pass, usernameVariable: 'Username', passwordVariable: 'Password'],
+  ]){
     stages {
-       
-        stage('mask password') {
+        stage('Build') {
             steps {
-                withCredentials([usernamePassword(credentialsId: 'curl_pass', usernameVariable: 'Username', passwordVariable: 'Password')]) {
-                      sh 'curl -u $USERNAME:$PASSWORD http://localhost:8080'
-                    }
+                bat 'cd d:'
+                echo "on d drive"
+                bat 'D:\\new.bat'
                 
             }
+        }       
+        stage ('echo variables') {
+          sh """(
+            echo "User: ${Username}"
+            echo "Pass: ${Password}"
+          )"""
         }
-        
+                                                                                                                                                            
         
     }
 }
