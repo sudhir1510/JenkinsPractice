@@ -7,7 +7,7 @@ pipeline {
                  
                           
          withCredentials([
-      [$class: 'UsernamePasswordMultiBinding', credentialsId: 'curl_pass', usernameVariable: 'Username', passwordVariable: 'Password'],
+      [ credentialsId: 'curl_pass', usernameVariable: 'Username', passwordVariable: 'Password'],
     ]){
     
           sh """(
