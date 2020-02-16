@@ -1,9 +1,13 @@
+@Library('pipeline-library-demo')_
 pipeline{
 	agent any
 		stages{
 			stage('first'){
 				steps{
 					echo 'starting...!'
+					sayHello 'Tejal'
+					echo 'end...!'
+					
 				}
 			}	
 		}
