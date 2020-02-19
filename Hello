@@ -5,7 +5,7 @@ pipeline{
 			stage('first'){
 				steps{
 					echo 'starting...!'
-					sayHello 'Sudhir'
+					sayHello('Sudhir')
 					echo 'end...!'
 					
 				}
